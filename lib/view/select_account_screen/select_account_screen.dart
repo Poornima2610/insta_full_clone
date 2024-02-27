@@ -49,12 +49,13 @@ class SelectAccountScreen extends StatelessWidget {
             border: Border(top: BorderSide(width: 0.1)),
           ),
           child: RichText(
+             textAlign: TextAlign.center,
               text: TextSpan(
                   
                   text: "Dont have an account?",
                   style: TextStyle(
                       
-                      color: ColorConstants.primaryblack.withOpacity(.4)),
+                      color: ColorConstants.primaryblack.withOpacity(.7)),
                   children: [
                 TextSpan(
                     text: "sign up",
