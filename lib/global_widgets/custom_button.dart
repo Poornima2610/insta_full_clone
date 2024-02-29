@@ -1,39 +1,42 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/core/constants/color_constants.dart';
+
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({
-    Key? key,
-    required this.text,
-    this.buttonColor = Colors.blue,
-    this.haveBorder = false,
-    this.onTap,
-  }) : super(key: key);
+  const CustomButton(
+      {super.key,
+      required this.text,
+      this.buttonColor = ColorConstants.primaryblue,
+      this.haveBorder = false,
+      this.textColor = ColorConstants.primaryWhite,
+      this.onTap});
 
   final String text;
+  final Color textColor;
   final Color buttonColor;
   final bool haveBorder;
-  final VoidCallback? onTap;
+
+  final void Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 20, right: 20),
-      child: InkWell(
-        onTap: onTap,
-        child: Container(
-          width: double.infinity,
-          decoration: BoxDecoration(
+    return InkWell(
+      onTap: onTap,
+      child: Container(
+        padding: EdgeInsets.symmetric(vertical: 15),
+        decoration: BoxDecoration(
             color: buttonColor,
-            borderRadius: BorderRadius.circular(10),
-            border: haveBorder ? Border.all(color: Colors.black) : null,
-          ),
-          child: TextButton(
-            onPressed: onTap,
-            child: Text(
-              text,
-              style: TextStyle(color: Colors.white),
-            ),
-          ),
+            borderRadius: BorderRadius.circular(5),
+            border: haveBorder == true
+                ? Border.all(color:ColorConstants.primaryblack.withOpacity(.4))
+                : null),
+        child: Center(
+          child: Text(text,
+              style: TextStyle(
+                color: textColor,
+                fontSize: 14,
+                fontWeight: FontWeight.w500,
+              )),
         ),
       ),
     );
