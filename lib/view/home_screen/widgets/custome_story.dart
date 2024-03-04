@@ -30,8 +30,8 @@ class CustomStoryAvatar extends StatelessWidget {
               ),
               Container(
                 padding: EdgeInsets.all(3),
-                height: 90,
-                width: 90,
+                height: 80,
+                width: 80,
                 decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     gradient:
